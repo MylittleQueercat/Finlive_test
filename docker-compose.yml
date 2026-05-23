@@ -1,0 +1,33 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: test_mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: shop
+    volumes:
+      - mongo_data:/data/db
+      - ./mongo-seed/seed.js:/docker-entrypoint-initdb.d/seed.js:ro
+
+  backend:
+    build: ./backend
+    container_name: test_backend
+    ports:
+      - "3001:3001"
+    environment:
+      MONGO_URI: mongodb://mongo:27017/shop
+      PORT: 3001
+    depends_on:
+      - mongo
+
+  frontend:
+    build: ./frontend
+    container_name: test_frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:

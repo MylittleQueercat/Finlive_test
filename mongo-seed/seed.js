@@ -1,0 +1,61 @@
+db = db.getSiblingDB('shop');
+db.products.drop();
+db.products.insertMany([
+  // Electronics
+  { name: 'Wireless Headphones', price: 89.99, category: 'electronics', description: 'Over-ear wireless headphones with 30h battery life.', stock: 42 },
+  { name: 'Bluetooth Speaker', price: 45.00, category: 'electronics', description: 'Compact waterproof speaker with 360° sound.', stock: 78 },
+  { name: 'USB-C Hub 7-in-1', price: 29.99, category: 'electronics', description: 'Expand your laptop with HDMI, USB-A, SD card and more.', stock: 55 },
+  { name: 'Mechanical Keyboard', price: 120.00, category: 'electronics', description: 'TKL mechanical keyboard with Cherry MX switches.', stock: 30 },
+  { name: 'Gaming Mouse', price: 55.00, category: 'electronics', description: 'Ergonomic gaming mouse with 16000 DPI sensor.', stock: 60 },
+  { name: '4K Webcam', price: 79.99, category: 'electronics', description: 'Ultra HD webcam with built-in noise-cancelling mic.', stock: 25 },
+  { name: 'Portable Charger 20000mAh', price: 35.00, category: 'electronics', description: 'Fast-charge power bank compatible with all devices.', stock: 90 },
+  { name: 'Smart Watch', price: 199.99, category: 'electronics', description: 'Fitness tracking smartwatch with heart rate monitor.', stock: 18 },
+  { name: 'Noise-Cancelling Earbuds', price: 149.99, category: 'electronics', description: 'True wireless earbuds with active noise cancellation.', stock: 35 },
+  { name: 'LED Desk Lamp', price: 24.99, category: 'electronics', description: 'Adjustable LED lamp with USB charging port.', stock: 100 },
+  { name: 'Laptop Stand', price: 39.99, category: 'electronics', description: 'Aluminium adjustable stand for laptops up to 17".', stock: 65 },
+  { name: 'External SSD 1TB', price: 89.99, category: 'electronics', description: 'Portable SSD with 1050MB/s read speed.', stock: 40 },
+  { name: 'Screen Protector', price: 9.99, category: 'electronics', description: 'Tempered glass screen protector, pack of 2.', stock: 200 },
+
+  // Clothing
+  { name: 'Cotton T-Shirt', price: 19.99, category: 'clothing', description: 'Classic unisex 100% organic cotton tee.', stock: 150 },
+  { name: 'Slim Fit Jeans', price: 49.99, category: 'clothing', description: 'Stretch denim slim fit jeans in dark wash.', stock: 80 },
+  { name: 'Hooded Sweatshirt', price: 39.99, category: 'clothing', description: 'Soft fleece hoodie with kangaroo pocket.', stock: 95 },
+  { name: 'Running Shorts', price: 24.99, category: 'clothing', description: 'Lightweight quick-dry shorts with liner.', stock: 110 },
+  { name: 'Winter Jacket', price: 129.99, category: 'clothing', description: 'Insulated puffer jacket rated to -20°C.', stock: 45 },
+  { name: 'Casual Sneakers', price: 69.99, category: 'clothing', description: 'Minimalist leather sneakers for everyday wear.', stock: 60 },
+  { name: 'Wool Socks 3-Pack', price: 14.99, category: 'clothing', description: 'Merino wool socks, moisture-wicking and anti-odour.', stock: 200 },
+  { name: 'Baseball Cap', price: 22.99, category: 'clothing', description: 'Adjustable structured cap with embroidered logo.', stock: 130 },
+  { name: 'Yoga Pants', price: 44.99, category: 'clothing', description: 'High-waist compression leggings for training.', stock: 85 },
+  { name: 'Graphic Tee', price: 17.99, category: 'clothing', description: 'Screen-printed cotton tee with vintage design.', stock: 140 },
+  { name: 'Denim Jacket', price: 89.99, category: 'clothing', description: 'Classic trucker denim jacket, stonewashed finish.', stock: 50 },
+  { name: 'Raincoat', price: 74.99, category: 'clothing', description: 'Lightweight packable waterproof shell jacket.', stock: 40 },
+
+  // Books
+  { name: 'Clean Code', price: 34.99, category: 'books', description: 'A handbook of agile software craftsmanship by Robert C. Martin.', stock: 60 },
+  { name: 'The Pragmatic Programmer', price: 39.99, category: 'books', description: 'Your journey to mastery, 20th anniversary edition.', stock: 55 },
+  { name: 'Design Patterns', price: 44.99, category: 'books', description: 'Elements of reusable object-oriented software by the Gang of Four.', stock: 40 },
+  { name: 'Atomic Habits', price: 14.99, category: 'books', description: 'An easy and proven way to build good habits by James Clear.', stock: 120 },
+  { name: 'The Lean Startup', price: 12.99, category: 'books', description: 'How constant innovation creates radically successful businesses.', stock: 90 },
+  { name: 'Deep Work', price: 11.99, category: 'books', description: 'Rules for focused success in a distracted world by Cal Newport.', stock: 100 },
+  { name: 'JavaScript: The Good Parts', price: 29.99, category: 'books', description: 'Unearthing the excellence in JavaScript by Douglas Crockford.', stock: 70 },
+  { name: "You Don't Know JS", price: 24.99, category: 'books', description: 'Deep dive into the JavaScript language by Kyle Simpson.', stock: 80 },
+  { name: 'Eloquent JavaScript', price: 27.99, category: 'books', description: 'A modern introduction to programming with JavaScript.', stock: 75 },
+  { name: 'The Art of War', price: 7.99, category: 'books', description: 'Ancient Chinese military treatise by Sun Tzu.', stock: 200 },
+  { name: 'Thinking Fast and Slow', price: 15.99, category: 'books', description: 'Daniel Kahneman on the two systems that drive the way we think.', stock: 85 },
+  { name: 'Sapiens', price: 16.99, category: 'books', description: 'A brief history of humankind by Yuval Noah Harari.', stock: 95 },
+  { name: 'The Great Gatsby', price: 5.99, category: 'books', description: "F. Scott Fitzgerald's classic novel of the Jazz Age.", stock: 150 },
+
+  // Home
+  { name: 'Non-Stick Pan Set', price: 59.99, category: 'home', description: 'Three-piece ceramic non-stick cookware set.', stock: 45 },
+  { name: 'Memory Foam Pillow', price: 34.99, category: 'home', description: 'Contour memory foam pillow with cooling gel layer.', stock: 70 },
+  { name: 'Bamboo Cutting Board', price: 19.99, category: 'home', description: 'Eco-friendly bamboo board with juice groove.', stock: 110 },
+  { name: 'Stainless Steel Water Bottle', price: 24.99, category: 'home', description: 'Double-walled insulated bottle, keeps cold 24h.', stock: 130 },
+  { name: 'Scented Candle Set', price: 28.99, category: 'home', description: 'Set of 3 soy wax candles in seasonal scents.', stock: 90 },
+  { name: 'Wall Clock', price: 44.99, category: 'home', description: 'Silent sweep minimalist wall clock, 30cm diameter.', stock: 55 },
+  { name: 'Throw Blanket', price: 39.99, category: 'home', description: 'Soft knitted throw, 150×200cm, machine washable.', stock: 75 },
+  { name: 'Desk Organiser', price: 22.99, category: 'home', description: 'Bamboo desktop organiser with 6 compartments.', stock: 85 },
+  { name: 'Air Purifier', price: 149.99, category: 'home', description: 'HEPA air purifier covering up to 30m², ultra-quiet.', stock: 30 },
+  { name: 'Coffee Maker', price: 79.99, category: 'home', description: '12-cup programmable drip coffee maker with thermal carafe.', stock: 40 },
+  { name: 'Plant Pot Set', price: 32.99, category: 'home', description: 'Set of 3 ceramic pots with drainage holes and saucers.', stock: 95 },
+  { name: 'Bed Sheet Set', price: 54.99, category: 'home', description: '400-thread-count cotton sheet set, queen size.', stock: 60 },
+]);
